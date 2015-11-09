@@ -1,5 +1,8 @@
 <div ng-controller="GenerateCtrl">
-  <input name='site' ng-model='userSite' />
-  <p>{{brainGen}}</p>
-  <button ng-click="genPassword()"> ZombieMake me a password!</button>
+  <form name='gen'>
+    <input  name='site' type="text" ng-model='userSite' required placeholder="Enter a site name" />
+    <p>{{brainGen}}</p>
+    <button ng-click="genPassword()"> Zombify my password!</button>
+    <button ng-disabled="gen.$error.required" ng-click="savePassword()">Save me! Save ME!.a.sfasd</button>
+  </form>
 </div>

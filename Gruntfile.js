@@ -317,7 +317,6 @@ module.exports = function (grunt) {
   grunt.registerTask('debug', function () {
     grunt.task.run([
       'jshint',
-      'babel',
       'concurrent:chrome',
       'connect:chrome',
       'watch'
@@ -330,7 +329,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'babel',
     'chromeManifest:dist',
     'useminPrepare',
     'concurrent:dist',
