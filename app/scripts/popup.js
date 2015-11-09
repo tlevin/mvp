@@ -1,4 +1,4 @@
-angular.module('app', ['app.login', 'app.generate', 'ui.router'])
+angular.module('app', ['app.login', 'app.generate', 'app.services', 'ui.router'])
   
   .config(function( $stateProvider, $urlRouterProvider ) {
     $urlRouterProvider.otherwise('/');

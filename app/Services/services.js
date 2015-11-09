@@ -19,13 +19,25 @@ angular.module('app.services', [])
     };
 
     var savePassword = function ( site, password) {
-     dataList[site] = sjcl.encrypt(site, password);
-     console.log(dataList);
+      if($window.localStorage.getItem('PasswordList') === null ) {
+        $window.localStorage.setItem('PasswordList', '{}')  
+      }
+      var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
+      if( currentList[site] === undefined ){
+        currentList[site] = sjcl.encrypt(site, password);
+        $window.localStorage.setItem('PasswordList', JSON.stringify(currentList));
+      }
+    };
+    var decryptPassword = function ( site ) {
+      var currentList = $window.localStorage.getItem('PasswordList');
+      if( currentList[site] !== undefined ) {
+        return sjcl.decrypt(currentList[site], site)
+      }
     };
 
     var getAll = function () {
-      console.log(passwordList);
-    };
+
+    }
 
     return {
       generatePw : generatePw,
