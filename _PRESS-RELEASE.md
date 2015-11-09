@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  One Password for Zombies
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Remembering passwords can be difficult for the undead, brains are for eating, not for remembering logins.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Store your passwords in an easy to use chrome extension that will allow you to do more of what you like, satisifying your unending hunger.  1P4Z will generate a cryptographically complex password to use on your favorite websites like ZombieTinder.  Forget the password to your Zdate profile? Just check your 1P4Z and there it is!.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  If you don't have a way to remember strong passwords, you often will default to using one single password.  Brains is not a good password.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  Imagine your password ("Brains4Me") could unlock your entire library of strong passwords, now imagine it is right at your fingertips in a handy chrome extension?  Almost as tasty as a deepfried cerebellum.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  'Let our brains store your passwords, just don't eat them afterwards.'
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Just go to your chrome extensions and hit install 1P4Z
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  'Braaaaains, now login to InstaCart4Zombies is easy.... MOAR BRAINS'
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Like your 1P4Z?  Share with friends so no hackers can steal your ZPaypal info! Coming soon to a mobile platform of your choice!
