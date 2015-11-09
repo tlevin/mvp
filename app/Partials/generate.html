@@ -1,5 +1,5 @@
-<form ng-submit="genPassword()">
+<div ng-controller="GenerateCtrl">
   <input name='site' ng-model='userSite' />
-  <input name='genPass' ng-model='brainGen' />
-  <button> ZombieMake me a password!</button>
-</form>
+  <p>{{brainGen}}</p>
+  <button ng-click="genPassword()"> ZombieMake me a password!</button>
+</div>
