@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "1P4Z",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "One Password for Zombies",
+    "description": "The description of the application"
+  }
+}
