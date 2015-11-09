@@ -1,4 +1,4 @@
-angular.module('app', ['app.login', 'app.generate', 'app.services', 'ui.router'])
+angular.module('app', ['app.login', 'app.generate', 'app.list', 'app.services', 'ui.router'])
   
   .config(function( $stateProvider, $urlRouterProvider ) {
     $urlRouterProvider.otherwise('/');
@@ -21,10 +21,10 @@ angular.module('app', ['app.login', 'app.generate', 'app.services', 'ui.router']
       })
       .state('list', {
         url: '/list',
-        controller: 'ListController',
+        controller: 'ListCtrl',
         views: {
           'nav' :  { templateUrl: 'partials/nav.html'},
-          'main' : { templateUrl: 'partials/generate.html' }
+          'main' : { templateUrl: 'partials/list.html' }
         }
       });
     });

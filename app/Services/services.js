@@ -31,18 +31,20 @@ angular.module('app.services', [])
     var decryptPassword = function ( site ) {
       var currentList = $window.localStorage.getItem('PasswordList');
       if( currentList[site] !== undefined ) {
-        return sjcl.decrypt(currentList[site], site)
+        return sjcl.decrypt(currentList[site], site);
       }
     };
 
     var getAll = function () {
-
+      var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
+      return currentList['PasswordList'];
     }
 
     return {
       generatePw : generatePw,
       authUser : authUser,
       savePassword : savePassword,
-      getAll : getAll
+      getAll : getAll,
+      decryptPassword : decryptPassword
     };
   })
