@@ -1,7 +1,8 @@
 <div ng-controller="LoginCtrl">
   <h1>Braaaaaains... <br>Enter your Password...</h1>
   <form ng-submit="login()">
-    <input ng-model='userPass'/>
+    <input type='password' ng-model='userPass'/>
     <button>Get my Brains, Give Passwords!</button>
   </form>
+  <h2 ng-show="noLogin">Sorry braindead undead, try again</h2>
 </div>
