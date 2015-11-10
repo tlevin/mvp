@@ -1,6 +1,6 @@
 angular.module('app.list', [])
   .controller('ListCtrl', function ( $scope, $window , PasswordHandler ) {
-    $scope.list = {};
+    $scope.list = null;
     $scope.curPassword = '';
     $scope.pwWrong = false;
 
@@ -12,9 +12,12 @@ angular.module('app.list', [])
       try {
         var key = PasswordHandler.authUser( pw );
         $scope.curPassword = PasswordHandler.decryptPassword( site, key );
-        $scope.pwWrong = false;
+        if( $scope.curPassword ) {
+          $scope.pwWrong = false;
+        } else {
+          $scope.pwWrong = true;
+        }
       } catch(e) {
-        $scope.pwWrong = true;
       }
     };
     $scope.getAll();

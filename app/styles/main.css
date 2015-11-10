@@ -4,7 +4,7 @@
 }
 body {
   padding: 0;
-  min-width: 250px;
+  min-width: 300px;
   min-height: 200px;
   color: white;
   background-image: url('../assets/slime.jpg');
@@ -22,7 +22,25 @@ ul li {
   display: inline;
   padding: 5px;
 }
-
+.scary {
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: grey;
+  padding: 15px;
+  display: inline-block;
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 30px;
+  color: #99FF00;
+  font-family: 'Nosifer', 'cursive';
+  font-size: 20px;
+}
+.error {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+.center {
+  margin: 15px 0 0 35px;
+}
 .container {
   margin: 15px 0 0 15px;
 }

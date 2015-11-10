@@ -1,5 +1,6 @@
 <div ng-controller="ListCtrl">
-  <input ng-model="userPass" type="password" placeholder="Enter your Master Password"/>
+  <input ng-show="list != '{}'" ng-model="userPass" type="password" ng-class="{'error': pwWrong }" placeholder="Enter your Password"/>
+  <h2 ng-show="pwWrong">Wrong Password, try again</h2>
   <div ng-repeat="site in list">
     <div class = "site">
       <div>{{site.siteName}}</div>
