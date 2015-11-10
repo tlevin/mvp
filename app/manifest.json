@@ -1,19 +1,13 @@
 {
-  "name": "__MSG_appName__",
+  "name": "1P4Z",
   "version": "0.0.2",
   "manifest_version": 2,
-  "description": "__MSG_appDescription__",
+  "description": "One Password For Zombies",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
   "default_locale": "en",
-  "background": {
-    "scripts": [
-      "scripts.babel/chromereload.js",
-      "scripts.babel/background.js"
-    ]
-  },
   "permissions": [
     "clipboardRead",
     "clipboardWrite",
