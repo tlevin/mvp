@@ -1,14 +1,13 @@
 angular.module('app.list', [])
-  .controller('ListCtrl', function ( $scope, PasswordHandler ) {
+  .controller('ListCtrl', function ( $scope, $window , PasswordHandler ) {
     $scope.list = {};
-
+    $scope.curPassword = '';
     $scope.getAll = function () {
       $scope.list = PasswordHandler.getAll();
     };
 
     $scope.decryptPassword = function ( pw ) {
-      $scope.displayPw = PasswordHandler.decryptPassword( pw );
+      $scope.curPassword = PasswordHandler.decryptPassword( pw );
     };
     $scope.getAll();
-    console.log($scope.list)
   });

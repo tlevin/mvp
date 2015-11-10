@@ -1,4 +1,4 @@
-angular.module('app', ['app.login', 'app.generate', 'app.list', 'app.services', 'ui.router'])
+angular.module('app', ['app.login', 'app.generate', 'app.list', 'app.services', 'ui.router', 'ngclipboard'])
   
   .config(function( $stateProvider, $urlRouterProvider ) {
     $urlRouterProvider.otherwise('/');

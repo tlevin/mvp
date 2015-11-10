@@ -1,5 +1,6 @@
 <div ng-controller="ListCtrl">
   <table ng-repeat="site in list">
-    <td>{{site}}</td><td><button ng-click="decryptPassword({{site}})">Copy to clipboard</button></td>
+    <td>{{site.siteName}}</td>
+    <td><button ng-click="decryptPassword(site.siteName)" ngclipboard data-clipboard-text="{{curPassword}}">Copy to clipboard</button></td>
   </table>
 </div>
