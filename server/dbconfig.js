@@ -8,8 +8,7 @@ exports.users = sequelize.define('users', {
     type: Sequelize.STRING,
     unique: true
   },
-  password : Sequelize.STRING,
-  salt : Sequelize.STRING
+  password : Sequelize.STRING
 });
 
 //establish password table

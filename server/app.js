@@ -11,7 +11,7 @@ app.use(parser.json())
 app.post('/passwords', requestHandler.postPasswords);
 app.get('/passwords', requestHandler.getPasswords);
 
-app.get('/user', requestHandler.getUser);
+app.post('/user/verify', requestHandler.verifyUser);
 app.post('/user', requestHandler.postUser);
 
 app.use('*', function( req, res ) {

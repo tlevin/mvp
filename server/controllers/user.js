@@ -14,4 +14,24 @@ var createUser = function ( user, password, res ) {
     });
   });
 };
+
+var verifyUser = function ( user, password, res ) {
+  db.users.findOne({
+    where: {
+      username : user
+    }
+  }).then(function(user) {
+    bcrypt.compare(password, user.get('password'), function ( err, found ) {
+      if ( found ) {
+        res.sendStatus(200);
+      } else {
+        res.sendStatus(302);
+      }
+    });
+
+  });
+};
+
+
 exports.createUser = createUser;
+exports.verifyUser = verifyUser;
