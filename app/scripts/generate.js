@@ -1,6 +1,7 @@
 angular.module('app.generate', [])
   .controller('GenerateCtrl', function( $scope, $window, PasswordHandler ) {
     $scope.brainGen = '';
+    $scope.pwWrong = false;
     $scope.genPassword = function () {
       $scope.brainGen = PasswordHandler.generatePw();
     };
@@ -8,8 +9,14 @@ angular.module('app.generate', [])
       if ( $scope.brainGen === '' ) {
         $scope.genPassword();
       }
-      PasswordHandler.savePassword( $scope.userSite, $scope.brainGen );
+      try {
+        PasswordHandler.savePassword( $scope.userSite, $scope.brainGen, PasswordHandler.authUser($scope.userPass) );
+        $scope.pwWrong = false;
+      } catch(e) {
+        $scope.pwWrong = true;
+      }
       $scope.userSite = '';
       $scope.brainGen = '';
+      $scope.userPass = '';
     }
   });

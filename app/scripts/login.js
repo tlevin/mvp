@@ -3,6 +3,7 @@ angular.module('app.login', [])
 
     $scope.isConfig = function () {
       if( $window.localStorage.getItem('com.1p4z') === null ){
+        PasswordHandler.emptyList();
         $location.path( '/config' );
       }
     };
@@ -10,9 +11,9 @@ angular.module('app.login', [])
 
     $scope.login = function () {
       if( PasswordHandler.authUser( $scope.userPass )){
-        console.log( 'You matched' );
+        $location.path('/list');
       } else {
-        console.log( 'You errored' );
+        $scope.noLogin = true;
       }
       
     };

@@ -15,6 +15,7 @@ angular.module('app.services', [])
     };
 
     var configUser = function ( password ) {
+      emptyList();
       secretKey = Math.random().toString(36).slice(-24);
       $window.localStorage.setItem('com.1p4z', JSON.stringify({ 'isAuth' : true, 'sk' : sjcl.encrypt( password, secretKey) }));
     };
@@ -23,7 +24,7 @@ angular.module('app.services', [])
       var secretKey = JSON.parse($window.localStorage.getItem('com.1p4z'));
       try {
         sjcl.decrypt( password, secretKey.sk )
-        return true;
+        return sjcl.decrypt( password, secretKey.sk );
       } catch(e) {
         return false; 
       }
@@ -47,12 +48,17 @@ angular.module('app.services', [])
       return currentList;
     };
 
+    var emptyList = function () {
+      $window.localStorage.setItem('PasswordList', '{}');
+    };
+
     return {
       generatePw : generatePw,
       authUser : authUser,
       savePassword : savePassword,
       getAll : getAll,
       decryptPassword : decryptPassword,
-      configUser: configUser
+      configUser: configUser,
+      emptyList: emptyList
     };
   })
