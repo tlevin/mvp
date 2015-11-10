@@ -1,6 +1,24 @@
 body {
   padding: 20px;
-  min-width: 200px;
-  color: red;
+  min-width: 250px;
+  min-height: 200px;
+  color: white;
   background-image: url('../assets/slime.jpg');
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  display: inline-block;
+}
+
+ul li {
+  font-size: 20px;
+}
+
+.center {
+  display: inline-block;
+  margin: 0 auto;
 }
