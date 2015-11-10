@@ -1,9 +1,9 @@
 <div ng-controller="GenerateCtrl">
   <form name='gen'>
-    <input  name='site' type="text" ng-model='userSite' required placeholder="Enter a Site Name" />
-    <input  name='pass' type="password" ng-model='userPass' required ng-class="{'error': pwWrong }" placeholder="Enter your Password" />
-    <button ng-click="genPassword()"> Zombify my Password!</button>
-    <button ng-disabled="gen.$error.required" ng-click="savePassword()">Save me! Save my PASSWORD!</button>
+    <input class="center" name='site' type="text" ng-model='userSite' required placeholder="Enter a Site Name" />
+    <input  class="center" name='pass' type="password" ng-model='userPass' required ng-class="{'error': pwWrong }" placeholder="Enter your Password" />
+    <button class="center" ng-click="genPassword()"> Zombify my Password!</button>
+    <button class="center" ng-disabled="gen.$error.required" ng-click="savePassword()">Save me! Save my PASSWORD!</button>
   </form>
     <h1 ng-show="brainGen" class="scary">{{brainGen}}</h1>
     <h2 ng-show="pwWrong">Wrong Password, try again</h2>

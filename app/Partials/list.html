@@ -1,7 +1,7 @@
 <div ng-controller="ListCtrl">
-  <input ng-show="list != '{}'" ng-model="userPass" type="password" ng-class="{'error': pwWrong }" placeholder="Enter your Password"/>
+  <input class="center" ng-model="userPass" type="password" ng-class="{'error': pwWrong }" placeholder="Enter your Password"/>
   <h2 ng-show="pwWrong">Wrong Password, try again</h2>
-  <div ng-repeat="site in list">
+  <div class="center scary"ng-repeat="site in list">
     <div class = "site">
       <div>{{site.siteName}}</div>
       <button ng-click="decryptPassword(site.siteName, userPass)" ngclipboard data-clipboard-text="{{curPassword}}">Copy to clipboard</button>
