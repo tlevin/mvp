@@ -23,10 +23,8 @@ angular.module('app.services', [])
         $window.localStorage.setItem('PasswordList', '{}')  
       }
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
-      if( currentList[site] === undefined ){
-        currentList[site] = sjcl.encrypt(site, password);
-        $window.localStorage.setItem('PasswordList', JSON.stringify(currentList));
-      }
+      currentList[sjcl.encrypt(site, password)] =  site;
+      $window.localStorage.setItem('PasswordList', JSON.stringify(currentList));
     };
     var decryptPassword = function ( site ) {
       var currentList = $window.localStorage.getItem('PasswordList');
@@ -37,7 +35,7 @@ angular.module('app.services', [])
 
     var getAll = function () {
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
-      return currentList['PasswordList'];
+      return currentList;
     }
 
     return {

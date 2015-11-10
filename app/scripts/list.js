@@ -9,7 +9,6 @@ angular.module('app.list', [])
     $scope.decryptPassword = function ( pw ) {
       $scope.displayPw = PasswordHandler.decryptPassword( pw );
     };
-    $scope.$watch('$viewContentLoaded', function () {
-      $scope.getAll();
-  });
+    $scope.getAll();
+    console.log($scope.list)
   });
