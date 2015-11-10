@@ -10,7 +10,7 @@ exports.users = sequelize.define('users', {
 
 //establish password table
 exports.password = sequelize.define('password', {
-  site_name : Sequelize.STRING,
+  siteName : Sequelize.STRING,
   password : Sequelize.STRING
 });
 //sync the server to new schema
