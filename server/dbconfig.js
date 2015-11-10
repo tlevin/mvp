@@ -12,7 +12,7 @@ exports.users = sequelize.define('users', {
 });
 
 //establish password table
-exports.password = sequelize.define('password', {
+exports.passwords = sequelize.define('passwords', {
   siteName : Sequelize.STRING,
   password : Sequelize.STRING
 });
@@ -20,5 +20,5 @@ exports.password = sequelize.define('password', {
 sequelize.sync();
 
 //establish relationships between tables
-exports.users.hasMany(exports.password);
-exports.password.belongsTo(exports.users);
+exports.users.hasMany(exports.passwords);
+exports.passwords.belongsTo(exports.users);

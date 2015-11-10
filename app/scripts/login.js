@@ -1,14 +1,20 @@
 angular.module('app.login', [])
-  .controller('LoginCtrl', function( $scope, $location ) { 
-    $scope.password = 'Brains4Me';
+  .controller('LoginCtrl', function ( $scope, $location, $window, PasswordHandler ) { 
+
+    $scope.isConfig = function () {
+      if( $window.localStorage.getItem('com.1p4z') === null ){
+        $location.path( '/config' );
+      }
+    };
     $scope.noLogin = false;
 
     $scope.login = function () {
-      if( $scope.userPass === $scope.password ){
-        $location.path ( '/list' );
-        $scope.noLogin = false;
+      if( PasswordHandler.authUser( $scope.userPass )){
+        console.log( 'You matched' );
       } else {
-        $scope.noLogin = true;
+        console.log( 'You errored' );
       }
+      
     };
-  })
+    $scope.isConfig();
+  });

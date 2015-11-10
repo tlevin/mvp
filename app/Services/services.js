@@ -14,33 +14,45 @@ angular.module('app.services', [])
       return basePhrase.slice(0, randIndex).concat(zombiePhrase).concat(basePhrase.slice(randIndex+zombiePhrase.length));
     };
 
-    var authUser = function() {
-
+    var configUser = function ( password ) {
+      secretKey = Math.random().toString(36).slice(-24);
+      $window.localStorage.setItem('com.1p4z', JSON.stringify({ 'isAuth' : true, 'sk' : sjcl.encrypt( password, secretKey) }));
     };
 
-    var savePassword = function ( site, password) {
+    var authUser = function( password ) {
+      var secretKey = JSON.parse($window.localStorage.getItem('com.1p4z'));
+      try {
+        sjcl.decrypt( password, secretKey.sk )
+        return true;
+      } catch(e) {
+        return false; 
+      }
+    };
+
+    var savePassword = function ( site, password, secretKey ) {
       if($window.localStorage.getItem('PasswordList') === null ) {
-        $window.localStorage.setItem('PasswordList', '{}')  
+        $window.localStorage.setItem('PasswordList', '{}');
       }
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
-      currentList[site] = {'siteName' : site, 'Password' : sjcl.encrypt(site, password)};
+      currentList[site] = {'siteName' : site, 'Password' : sjcl.encrypt(secretKey, password)};
       $window.localStorage.setItem('PasswordList', JSON.stringify(currentList));
     };
-    var decryptPassword = function ( site ) {
+    var decryptPassword = function ( secretKey ) {
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
-      return sjcl.decrypt(site, currentList[site].Password)
+      return sjcl.decrypt(secretKey, currentList[site].Password);
     };
 
     var getAll = function () {
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
       return currentList;
-    }
+    };
 
     return {
       generatePw : generatePw,
       authUser : authUser,
       savePassword : savePassword,
       getAll : getAll,
-      decryptPassword : decryptPassword
+      decryptPassword : decryptPassword,
+      configUser: configUser
     };
   })

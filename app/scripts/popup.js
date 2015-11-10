@@ -1,9 +1,16 @@
-angular.module('app', ['app.login', 'app.generate', 'app.list', 'app.services', 'ui.router', 'ngclipboard'])
+angular.module('app', ['app.login', 'app.generate', 'app.list', 'app.services', 'app.config', 'ui.router', 'ngclipboard'])
   
   .config(function( $stateProvider, $urlRouterProvider ) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
+      .state('config', {
+        url: '/config',
+        controller: 'ConfigCtrl',
+        views: {
+          'main' : { templateUrl: 'partials/config.html'}
+        }
+      })
       .state('login', {
         url: '/',
         controller: 'LoginCtrl',
