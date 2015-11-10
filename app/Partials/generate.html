@@ -4,7 +4,7 @@
     <input  class="center" name='pass' type="password" ng-model='userPass' required ng-class="{'error': pwWrong }" placeholder="Enter your Password" />
     <button class="center" ng-click="genPassword()"> Zombify my Password!</button>
     <button class="center" ng-disabled="gen.$error.required" ng-click="savePassword()">Save me! Save my PASSWORD!</button>
+    <h2 class="scary center" ng-show="pwWrong" >Wrong Password, try again</h2>
   </form>
-    <h1 ng-show="brainGen" class="scary">{{brainGen}}</h1>
-    <h2 ng-show="pwWrong">Wrong Password, try again</h2>
+    <h1 ng-show="brainGen" class="scary center">{{brainGen}}</h1>
 </div>
