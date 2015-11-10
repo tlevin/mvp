@@ -5,6 +5,11 @@ angular.module('app.generate', [])
       $scope.brainGen = PasswordHandler.generatePw();
     };
     $scope.savePassword = function () {
+      if ( $scope.brainGen === '' ) {
+        $scope.genPassword();
+      }
       PasswordHandler.savePassword( $scope.userSite, $scope.brainGen );
+      $scope.userSite = '';
+      $scope.brainGen = '';
     }
   });
