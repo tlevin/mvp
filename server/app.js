@@ -1,9 +1,22 @@
 var express = require('express');
-var router = require('router.js');
+var requestHandler = require('./requestHandlers.js');
+var db = require('./dbconfig.js');
+var parser = require('body-parser');
+
 
 var app = express();
 
-app.use(router.requestHandler);
+app.use(parser.json())
+
+app.post('/passwords', requestHandler.postPasswords);
+app.get('/passwords', requestHandler.getPasswords);
+
+app.get('/user', requestHandler.getUser);
+app.post('/user', requestHandler.postUser);
+
+app.use('*', function( req, res ) {
+  res.sendStatus(404);
+});
 
 app.listen(3000);
 

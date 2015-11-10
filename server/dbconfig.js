@@ -4,8 +4,12 @@ var sequelize = new Sequelize('main', 'root', '1234');
 
 //establish user table
 exports.users = sequelize.define('users', {
-  username : Sequelize.STRING,
-  password : Sequelize.STRING
+  username : {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  password : Sequelize.STRING,
+  salt : Sequelize.STRING
 });
 
 //establish password table
