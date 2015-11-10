@@ -3,7 +3,7 @@
   <div ng-repeat="site in list">
     <div class = "site">
       <div>{{site.siteName}}</div>
-      <button ng-click="decryptPassword(userPass)" ngclipboard data-clipboard-text="{{curPassword}}">Copy to clipboard</button>
+      <button ng-click="decryptPassword(site.siteName, userPass)" ngclipboard data-clipboard-text="{{curPassword}}">Copy to clipboard</button>
     </div>
   </div>
 </div>

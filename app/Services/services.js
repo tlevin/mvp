@@ -38,9 +38,13 @@ angular.module('app.services', [])
       currentList[site] = {'siteName' : site, 'Password' : sjcl.encrypt(secretKey, password)};
       $window.localStorage.setItem('PasswordList', JSON.stringify(currentList));
     };
-    var decryptPassword = function ( secretKey ) {
+    var decryptPassword = function ( site, secretKey ) {
       var currentList = JSON.parse($window.localStorage.getItem('PasswordList'));
-      return sjcl.decrypt(secretKey, currentList[site].Password);
+      try {
+        return sjcl.decrypt(secretKey, currentList[site].Password)
+      } catch(e) {
+        return false;
+      }
     };
 
     var getAll = function () {
