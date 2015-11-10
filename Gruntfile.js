@@ -21,7 +21,7 @@ module.exports = function (grunt) {
   var config = {
     app: 'app',
     dist: 'dist',
-    srcScript: '<%= config.app %>/scripts.babel'
+    srcScript: '<%= config.app %>/scripts'
   };
 
   grunt.initConfig({
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= config.srcScript %>/{,*/}*.js'],
-        tasks: ['jshint', 'babel'],
+        tasks: ['jshint'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
